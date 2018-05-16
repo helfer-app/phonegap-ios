@@ -1,0 +1,22 @@
+<!--
+ * Menu is enclosed in <div id="app-menu"></div>
+-->
+
+<ul id="menu-items" class="menu-items" style="display:none;">
+
+    <% if(menu_items.length){ %>
+
+    <li class="has-ripple-feedback"><a href="#home">HOME</a></li>
+        <% _.each( menu_items, function( menu_item ){ %>
+
+            <li><a href="<%= menu_item.link %>"><%= menu_item.label %></a></li>
+
+        <% }) %>
+    <li class="has-ripple-feedback"><a href="#meine-schichten">Meine Schichten</a></li>
+    <li class="has-ripple-feedback"><a href="#ansprechpartner">Ansprechpartner</a></li>
+    <li class="has-ripple-feedback"><a href="#meldezentrale">Meldezentrale</a></li>
+    <li class="has-ripple-feedback"><a href="#info">Info & Credits</a></li>
+
+    <% } %>
+
+</ul>

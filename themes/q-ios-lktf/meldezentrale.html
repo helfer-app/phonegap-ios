@@ -1,0 +1,171 @@
+<!--
+ * Content is enclosed in <div id="app-content-wrapper"><div id="app-screen"></div></div>
+ * Subhead: is added by add-custom-data.php in the theme's php folder / It expects that the post has a subhead custom field
+ * Thumbnail caption: is added by add-custom-data.php in the theme's php folder
+ * Custom post date: getCustomDate() added in functions.js as a template's parameter
+ * Handler for image loading error: displayDefaultImage() added in functions.js as a template's parameter
+-->
+
+<link href="<%= TemplateTags.getThemeAssetUrl('assets/meldezentrale/bootstrap.min.css') %>" rel="stylesheet" id="bootstrap-css">
+<script src="<%= TemplateTags.getThemeAssetUrl('assets/meldezentrale/bootstrap.min.js') %>"></script>
+<script src="<%= TemplateTags.getThemeAssetUrl('assets/meldezentrale/jquery-1.11.1.min.js') %>"></script>
+<script>
+    $('#app-header > h1').html('Meldezentrale');
+</script>
+
+<div id="content" class="content single-template">
+
+
+    <div class="container">
+        <div class="page-header">
+        Alle Felder mit einem <code>*</code> sind Pflichtfelder.
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel with-nav-tabs panel-default">
+                    <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tab1default" data-toggle="tab">Mülleimer ist voll</a></li>
+                            <li><a href="#tab2default" data-toggle="tab">Etwas ist kaputt gegangen</a></li>
+                            <li><a href="#tab3default" data-toggle="tab">Sonstiges</a></li>
+                            <li><a href="#tab4default" data-toggle="tab">Feedback zur Helfer-App</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tab1default">
+                                <h1><b>Mülleimer voll? Mülleimer traurig!</b></h1>
+                                <hr>
+                                <form>
+                                    <input name="muell" type="hidden">
+                                    Wo ist der Mülleimer voll? <code>*</code>
+                                    <select class="form-control" name="orte" required>
+                                        <option value="DJH Jugendherberge Gießen">DJH Jugendherberge Gießen</option>
+                                        <option value="Schule 7">Schule 7</option>
+                                        <option value="Schule 6">Schule 6</option>
+                                    </select>
+                                    <br>
+                                    Zusatz:
+                                    <input class="form-control" name="zusatz" placeholder="z.B. Haupteingang, Platz davor, Halle etc." type="text">
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="tab2default">
+                                <h1><b>Ist etwas kaputt gegangen?</b></h1>
+                                <hr>
+                                <form>
+                                    <input name="kaputt" type="hidden">
+                                    Was genau ist kaputt gegangen? <code>*</code>
+                                    <input class="form-control" name="gegenstand" placeholder="z.B. Tisch, Schwebebalken, Tür etc." type="text" required>
+                                    <br>
+                                    An welchem Standort ist es kaputt gegangen? <code>*</code>
+                                    <select class="form-control" name="orte" required>
+                                        <option value="DJH Jugendherberge Gießen">DJH Jugendherberge Gießen</option>
+                                        <option value="Schule 7">Schule 7</option>
+                                        <option value="Schule 6">Schule 6</option>
+                                    </select>
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="tab3default">
+                                <form>
+                                    <input name="sonstiges" type="hidden">
+                                    <h1><b>Spezielles Anliegen das gemeldet werden sollte? Dann...</b></h1>
+                                    <hr>
+                                    <code>Bitte fülle die Felder entsprechend deinem Anliegen aus</code>
+                                    <br>
+                                    <br>
+
+                                    Was?
+                                    <input class="form-control" name="was" placeholder="Was ist passiert?" type="text">
+                                    <br>
+                                    Wo?
+                                    <input type="text" name="wo" class="form-control" placeholder="Wo ist es passiert?">
+                                    <br>
+                                    Wann?
+                                    <input type="text" name="wann" class="form-control" placeholder="Wann ist es passiert?">
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="tab4default">
+                                <form>
+                                    <input name="feedback" type="hidden">
+                                    <h1><b>Hast du Feedback zur App? Dann ist hier der richtige Platz! :)</b></h1>
+                                    <hr>
+                                    <br>
+                                    Feedback: <code>*</code>
+                                    <textarea name="feedback" class="form-control" style="min-width: 100%" required>
+
+                                    </textarea>
+                                    <br>
+                                    <br>
+                                    <input class="form-control submit-button" type="submit" value="Abschicken">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            // @desc Show a message in the message bar during 3 sec
+            function showMessage(msgText) {
+                $("#app-message-bar").html(msgText);
+                $("#app-message-bar").removeClass("message-off").addClass("message-on");
+                setTimeout(hideMessage,3000);
+            }
+
+            // @desc Hide the message bar
+            function hideMessage() {
+                $("#app-message-bar").removeClass("message-on").addClass("message-off");
+                $("#app-message-bar").html("");
+            }
+
+
+
+            $('form').on('submit', function (e) {
+
+                var isValid = true;
+                $('input,textarea,select').filter('[required]:visible').each(function() {
+                    if ( $(this).val() === '' )
+                        isValid = false;
+                });
+                if(isValid){
+                    //button disablen
+                    $('.submit-button').prop("disabled",true);
+                    $.ajax({
+                        type: 'post',
+                        url: 'https://lktf.turnjugend-frankfurt.de/wp-content/themes-wp-appkit/q-ios-lktf/php/meldezentrale.php',
+                        data: $(this).serialize(),
+                        success: function () {
+                            $('form').trigger("reset");
+                            showMessage("Danke, deine Meldung wurde erfolgreich versendet!");
+                        },
+                        error: function(){
+                            showMessage("FEHLER: Meldung konnte nicht abgeschickt werden. Hast du Internet?");
+                        }
+                    });
+                    $('.submit-button').prop("disabled",false);
+                    e.preventDefault();
+                }else{
+                    showMessage("Bitte fülle alle Felder aus");
+                    e.preventDefault();
+                }
+
+
+            });
+
+        </script>
+    </div>
+
+
+</div>
