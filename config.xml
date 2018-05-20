@@ -67,7 +67,7 @@
 	
 	
 	
-	<gap:splash src="DefaultLandscapeiPhone5.png" gap:platform="ios" />
+	
 	
 	<gap:splash src="splashscreens/DefaultLandscapeiPhone5.png" gap:platform="ios" width="320" height="568" />
 	<gap:splash src="splashscreens/DefaultLandscapeiPhone5_landscape.png" gap:platform="ios" width="568" height="320" />
