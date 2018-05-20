@@ -19,7 +19,7 @@
 	<preference name="DisallowOverscroll" value="true" />
 	<preference name="webviewbounce" value="false" />
 	
-	<preference name="phonegap-version" value="cli-6.5.0" />
+	<preference name="phonegap-version" value="cli-8.0.0" />
 
 	<!-- PhoneGap plugin declaration -->
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
