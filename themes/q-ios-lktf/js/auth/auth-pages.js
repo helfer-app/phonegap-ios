@@ -139,6 +139,10 @@ define( [ 'jquery', 'core/theme-app', 'core/modules/authentication' ], function(
                 template_args.meine_schichten = current_user.info.meine_schichten;
                 template_args.test = current_user.info.test;
             }
+			else if(view_template == 'meldezentrale'){
+				 var current_user = Auth.getCurrentUser();
+				 template_args.email = current_user.info.email;
+			}
 
             return template_args;
         } );

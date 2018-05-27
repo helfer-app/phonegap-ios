@@ -42,7 +42,7 @@
                             * Linien: <%= post.busverkehr1 %>
 
                             <br>
-                            <a href="#" onclick="window.open('https://www.rmv.de/auskunft/bin/jp/query.exe/dn?SID=A=1@O=<%= post.next_bus1 %>f@X=8652324@Y=50591281@U=80@L=003014591@B=1@V=6.9,@p=1521814818@&externalCall=yes&start=yes', '_system');">
+                            <a href="#" onclick="window.open('https://www.rmv.de/auskunft/bin/jp/query.exe/dn?L=vs_rmv&ZID=A=2@O=<%= post.next_bus1 %>@X=8681072@Y=50591192@U=103@L=990067365@B=1@V=6.9,@p=1495608155@&externalCall=yes&start=yes', '_system');">
                                 <img width="150" src="<%= TemplateTags.getThemeAssetUrl('img/KoTi_Logo_40x15_2c.png') %>" alt="RMV Fahrplanauskunft - Button" />
                             </a> <br>(Fahrplanauskunft; klicken, danach runterscrollen)
                         </li>
@@ -53,7 +53,7 @@
                             <br>
                             * Linien: <%= post.busverkehr2 %>
                             <br>
-                            <a href="#" onclick="window.open('https://www.rmv.de/auskunft/bin/jp/query.exe/dn?SID=A=1@O=<%= post.next_bus2 %>f@X=8652324@Y=50591281@U=80@L=003014591@B=1@V=6.9,@p=1521814818@&externalCall=yes&start=yes', '_system');">
+                            <a href="#" onclick="window.open('https://www.rmv.de/auskunft/bin/jp/query.exe/dn?L=vs_rmv&ZID=A=2@O=<%= post.next_bus2 %>@X=8681072@Y=50591192@U=103@L=990067365@B=1@V=6.9,@p=1495608155@&externalCall=yes&start=yes', '_system');">
                                 <img width="150" src="<%= TemplateTags.getThemeAssetUrl('img/KoTi_Logo_40x15_2c.png') %>" alt="RMV Fahrplanauskunft - Button" />
                             </a> <br>(Fahrplanauskunft; klicken, danach runterscrollen)
                         </li>
@@ -62,8 +62,8 @@
                             <br>
                             <%= post.adresse %>
                             <br>
-                            <a href="#" onclick="window.open('https://www.google.com/maps/search/?api=1&query=' + post.adresse)">
-                                <img width="100" src="<%= TemplateTags.getThemeAssetUrl('img/google_maps.png') %>">
+                            <a href="#" onclick="window.open('https://www.google.com/maps/search/?api=1&query=<%= post.next_bus2 %>', '_system');">
+                                <img width="150" src="<%= TemplateTags.getThemeAssetUrl('img/google_maps.png') %>" alt="Google Maps" />
                             </a>
                         </li>
                     </ol>

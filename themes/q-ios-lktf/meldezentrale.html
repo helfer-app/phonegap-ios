@@ -38,11 +38,28 @@
                                 <hr>
                                 <form>
                                     <input name="muell" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     Wo ist der Mülleimer voll? <code>*</code>
                                     <select class="form-control" name="orte" required>
+                                        <option value="HelferPoint">HelferPoint</option>
+                                        <option value="Turnfestmeile">Turnfestmeile</option>
+                                        <option value="Herderschule Sporthalle A">Herderschule Sporthalle A</option>
+										
+										<option value="Herderschule Sporthalle B">Herderschule Sporthalle B</option>
+                                        <option value="Alexander-von-Humboldt-Schule Turnhalle C">Alexander-von-Humboldt-Schule Turnhalle C</option>
+                                        <option value="Sportanlage West">Sportanlage West</option>
+										<option value="Ricarda-Huch-Schule Sporthalle">Ricarda-Huch-Schule Sporthalle</option>
+                                        <option value="Theodor-Litt-Schule Sporthalle">Theodor-Litt-Schule Sporthalle</option>
+                                        <option value="Herderschule Sporthalle A">Herderschule Sporthalle A</option>
+                                        <option value="Sporthalle Wieseck 'Am Ried'">Sporthalle Wieseck 'Am Ried'</option>
+                                        <option value="Sporthalle Heuchelheim">Sporthalle Heuchelheim</option>
+                                        <option value="Stadthalle Linden">Stadthalle Linden</option>
+                                        <option value="Sporthalle Gießen-Ost">Sporthalle Gießen-Ost</option>
+                                        <option value="Gesamtschule Gießen Ost">Gesamtschule Gießen Ost</option>
+                                        <option value="Ricarda-Huch-Schule">Ricarda-Huch-Schule</option>
+                                        <option value="Liebig-Schule">Liebig-Schule</option>
+                                        <option value="Friedrich-Ebert-Schule">Friedrich-Ebert-Schule</option>
                                         <option value="DJH Jugendherberge Gießen">DJH Jugendherberge Gießen</option>
-                                        <option value="Schule 7">Schule 7</option>
-                                        <option value="Schule 6">Schule 6</option>
                                     </select>
                                     <br>
                                     Zusatz:
@@ -57,14 +74,34 @@
                                 <hr>
                                 <form>
                                     <input name="kaputt" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     Was genau ist kaputt gegangen? <code>*</code>
                                     <input class="form-control" name="gegenstand" placeholder="z.B. Tisch, Schwebebalken, Tür etc." type="text" required>
                                     <br>
                                     An welchem Standort ist es kaputt gegangen? <code>*</code>
                                     <select class="form-control" name="orte" required>
+                                        <option value="HelferPoint">HelferPoint</option>
+                                        <option value="Turnfestmeile">Turnfestmeile</option>
+                                        <option value="Herderschule Sporthalle A">Herderschule Sporthalle A</option>
+										
+										<option value="Herderschule Sporthalle B">Herderschule Sporthalle B</option>
+                                        <option value="Alexander-von-Humboldt-Schule Turnhalle C">Alexander-von-Humboldt-Schule Turnhalle C</option>
+                                        <option value="Sportanlage West">Sportanlage West</option>
+										<option value="Ricarda-Huch-Schule Sporthalle">Ricarda-Huch-Schule Sporthalle</option>
+                                        <option value="Theodor-Litt-Schule Sporthalle">Theodor-Litt-Schule Sporthalle</option>
+                                        <option value="Herderschule Sporthalle A">Herderschule Sporthalle A</option>
+                                        <option value="Sporthalle Wieseck 'Am Ried'">Sporthalle Wieseck 'Am Ried'</option>
+                                        <option value="Sporthalle Heuchelheim">Sporthalle Heuchelheim</option>
+                                        <option value="Stadthalle Linden">Stadthalle Linden</option>
+                                        <option value="Sporthalle Gießen-Ost">Sporthalle Gießen-Ost</option>
+                                        <option value="Gesamtschule Gießen Ost">Gesamtschule Gießen Ost</option>
+                                        <option value="Ricarda-Huch-Schule">Ricarda-Huch-Schule</option>
+                                        <option value="Liebig-Schule">Liebig-Schule</option>
+                                        <option value="Friedrich-Ebert-Schule">Friedrich-Ebert-Schule</option>
                                         <option value="DJH Jugendherberge Gießen">DJH Jugendherberge Gießen</option>
-                                        <option value="Schule 7">Schule 7</option>
-                                        <option value="Schule 6">Schule 6</option>
+                                     
+										
+										
                                     </select>
                                     <br>
                                     <br>
@@ -74,6 +111,7 @@
                             <div class="tab-pane fade" id="tab3default">
                                 <form>
                                     <input name="sonstiges" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     <h1><b>Spezielles Anliegen das gemeldet werden sollte? Dann...</b></h1>
                                     <hr>
                                     <code>Bitte fülle die Felder entsprechend deinem Anliegen aus</code>
@@ -97,6 +135,7 @@
                             <div class="tab-pane fade" id="tab4default">
                                 <form>
                                     <input name="feedback" type="hidden">
+									<input name="email" value="<%= email %>" type="hidden">
                                     <h1><b>Hast du Feedback zur App? Dann ist hier der richtige Platz! :)</b></h1>
                                     <hr>
                                     <br>
