@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "me.ginga.lktfapp"
         versionCode = ""
-        version     = "0.1" >
+        version     = "0.1.1" >
 
 	<name>LKTF Helfer-App</name>
 
